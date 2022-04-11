@@ -3,7 +3,7 @@
   become: yes
   gather_facts: yes
   tasks:
-  - name: "Populate service facts"
+  - name: "Get service facts"
     service_facts:
   - name: "Check the service nginx facts as they are"
     debug:
