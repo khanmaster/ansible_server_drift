@@ -1,0 +1,10 @@
+# check_svc.yml
+- hosts: all
+  become: true
+  gather_facts: yes
+  tasks:
+  - name: "Get services facts"
+    service_facts:
+  - name: "Check the service facts as they are"
+    debug:
+      msg: "{{ansible_facts.services}}"
