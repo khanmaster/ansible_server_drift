@@ -1,0 +1,19 @@
+#nginx_handler.yml
+---
+- hosts: web
+  tasks:
+  - name: Install nginx
+    package:
+      name: nginx
+      state: present
+    notify:
+    - Start nginx
+  - name: ensure Nginx is running
+    service:
+      name: nginx
+      state: started
+  handlers:
+    - name: Start nginx
+      service:
+        name: nginx
+        state: started
